@@ -33,7 +33,7 @@ export default function Home() {
                   content: {
                     option: 'Back-End',
                     title: 'Behind the scenes',
-                    text: 'From PHP to NodeJs I develop with high standards according to each need.'
+                    text: 'From PHP to NodeJs I can develop the best integration according to each need. Applying patterns such as MVC and SOLID principles with a focus on efficiency and security. I will deliver a satisfactory product.'
                   }
                 },
                 {
@@ -43,11 +43,11 @@ export default function Home() {
                   content: {
                     option: 'Front-End',
                     title: 'UX/UI',
-                    text: 'The integration of what is most modern in the Javascript stacks, always focusing on user experience and delivering value to each client.'
+                    text: 'The development focused on the user experience has been consolidated with the result in sales conversion and brand consolidation.'
                   }
                 }
               ]}>
-                <AccordionItem option='Introduce' title='About me' text='Naturally Curious, enthusiastic, versatile professional. Building a better world through the code.\nIn 2019 during the pandemic, I decided to bring my skills as a web developer to the centre. Development is a passion, and I make no effort to improve my skills every day.' />
+                <AccordionItem option='Introduce' title='About me' highlight='Full-sata developer' text='Naturally Curious, enthusiastic, versatile professional building a better world through the code. The daily challenge is the fuel to do the next step. I’m constantly studying and improving My skills.' />
               </Accordion>
             </SectionContent>
           </Section>
