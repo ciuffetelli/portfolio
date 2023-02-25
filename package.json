@@ -1,12 +1,21 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciuffetelli/portfolio.git"
+  },  
+  "homepage": "https://www.ciuffetelli.co.uk/",
+  "author": "Daniel Ciuffetelli <seufetelli@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "engines": {
+    "node": "18"
   },
   "dependencies": {
     "@types/node": "18.11.10",
