@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { IconType } from "react-icons"
 import { useState } from "react";
+import { IconType } from "react-icons"
+
+import styles from './Accordion.module.css'
 
 import { AccordionItem, AccordionItemProps } from "./AccordionItem"
 
@@ -24,104 +25,27 @@ export function Accordion({ data, children }: AccordionProps) {
     }
 
     return (
-        <Container>
-            <WrapButtons>
+        <div className={styles.container}>
+            <div className={styles.wrapButtons}>
                 { data.map((item, key) => (
-                    <Item key={key} onClick={() => handleItemClick(key)}>
-                        <Title>{item.title}<Icon>{<item.icon />}</Icon></Title>
-                        <Description>{item.description}</Description>
-                        <Tags>{item.tags}</Tags>
-                    </Item>
+                    <div key={key} className={styles.item} onClick={() => handleItemClick(key)}>
+                        <div className={styles.itemTitle}>{item.title}<div className={styles.icon}>{<item.icon />}</div></div>
+                        <div className={styles.description}>{item.description}</div>
+                        <div className={styles.tags}>{item.tags}</div>
+                    </div>
                 )) }    
-            </WrapButtons>
-            <WrapChildren>
-                {children && <ItemContent display={(selected === -1)}>{children}</ItemContent>}
+            </div>
+            <div className={styles.wrapChildren}>
+                {(children && selected === -1) && <div className={styles.itemContent}>{children}</div>}
                 { data.map((item, key) => (
-                    <ItemContent display={(selected === key)}>
-                        <AccordionItem {...item.content} />
-                    </ItemContent> 
-                )) }   
-            </WrapChildren>
-        </Container>
+                    (selected === key) ? 
+                        <div className={styles.itemContent}>
+                            <AccordionItem {...item.content} />
+                        </div> 
+                    : 
+                        <></>
+                ))}
+            </div>
+        </div>
     )
 }
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    @media (min-width: 500px) {
-        flex-direction: row;
-    }       
-`
-
-const WrapButtons = styled.div`
-    display: flex;
-    width: 100%;
-
-    @media (min-width: 500px) {
-        width: 50%;
-        flex-direction: column;
-    }       
-`
-const WrapChildren = styled.div`
-    width: 100%;
-    padding: 4rem;
-
-    @media (min-width: 500px) {
-        width: 50%;
-
-        padding: 2rem 4rem;
-    }      
-`
-
-const ItemContent = styled.div<{display: boolean}>`
-    ${({display}) => (!display) ? 'display: none;' : 'display: flex;'}
-    flex: 1;
-    justify-content: center;
-    align-items: flex-start;
-`
-
-const Item = styled.div`
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem 0.5rem 0.25rem 0.5rem;
-    margin: .25rem;
-    background-color: #2b2f32;
-    border-radius: .25rem;
-    cursor: pointer;   
-
-    @media (min-width: 500px) {
-        padding: 2rem;
-    }    
-`
-
-const Title = styled.div`
-    width: 100%;
-    color: var(--primary);
-
-    @media (min-width: 500px) {
-        display: inline-flex;
-    }
-`
-
-const Icon = styled.div`
-    display: none;
-    margin: -1rem -1rem auto auto;
-    font-size: 2rem;
-    color: var(--primary);
-
-    @media (min-width: 500px) {
-        display: flex;
-    }    
-`
-
-const Description = styled.div`
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-`
-
-const Tags = styled.div`
-    margin-top: auto;
-`

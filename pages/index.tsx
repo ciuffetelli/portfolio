@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import styled from 'styled-components'
+
+import styles from '../styles/Home.module.css'
 
 import { BiCodeBlock, BiCode } from 'react-icons/bi'
 
@@ -10,7 +11,7 @@ import { AccordionItem } from '../Components/Accordion/AccordionItem'
 
 export default function Home() {
   return (
-    <Container>
+    <div className={styles.container}>
 
         <Head>
           <title>Daniel Ciuffetelli - Developer Engineer</title>
@@ -18,13 +19,13 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Main>
+        <div className={styles.main}>
           <Nav />
 
           <Hero />
 
-          <Section>
-            <SectionContent>
+          <div className={styles.section}>
+            <div className={styles.sectionContent}>
               <Accordion data={[
                 {
                   title: 'Back-End',
@@ -49,43 +50,10 @@ export default function Home() {
               ]}>
                 <AccordionItem option='Introduce' title='About me' text='Naturally Curious, enthusiastic, versatile professional. Building a better world through the code.\nIn 2019 during the pandemic, I decided to bring my skills as a web developer to the centre. Development is a passion, and I make no effort to improve my skills every day.' />
               </Accordion>
-            </SectionContent>
-          </Section>
-        </Main>
+            </div>
+          </div>
+        </div>
 
-    </Container>
+    </div>
   )
 }
-
-const Container = styled.div`
-  padding: 0 2rem;
-`
-
-const Main = styled.main`
-  max-width: 1024px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 4rem 0 0 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
-const Section = styled.section`
-  width: 100vw;
-  padding: 5rem 0;
-  background: #23272a;
-`
-
-const SectionContent = styled.div`
-  margin: auto;
-  max-width: 1024px;
-`
-
-const SectionItem = styled.div`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`

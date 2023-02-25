@@ -1,0 +1,105 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapButtons {
+    display: flex;
+    width: 100%;
+}
+
+.wrapChildren {
+    width: 100%;
+    padding: 4rem;    
+}
+
+.item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 0.5rem 0.25rem 0.5rem;
+    margin: .25rem;
+    background-color: #2b2f32;
+    border-radius: .25rem;
+    cursor: pointer; 
+}
+
+.itemTitle {
+    width: 100%;
+    color: var(--primary);    
+}
+
+.itemContent {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.icon {
+    display: none;
+    margin: -1rem -1rem auto auto;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;  
+}
+
+.tags {
+    margin-top: auto;
+}
+
+.accordionItem {
+    width: 100%;
+}
+
+.option {
+    color: var(--text-secondary);
+}
+
+.title {
+    font-size: 1.5ren;
+}
+
+.highlight {
+    font-size: 1.25rem;
+}
+
+.text {
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+}
+
+@media (min-width: 500px) {
+
+    .container {
+        flex-direction: row;
+    }
+
+    .item {
+        padding: 2rem;
+        margin-right: 2rem;
+    }
+
+    .itemTitle {
+        display: inline-flex;
+    }
+
+    .icon {
+        display: flex;
+    }
+
+    .wrapButtons {
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .wrapChildren {
+        width: 50%;
+        padding: 2rem 4rem;
+    }
+}

@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styles from './Accordion.module.css'
 
 export type AccordionItemProps = {
     option?: string
@@ -8,32 +8,11 @@ export type AccordionItemProps = {
 }
 export function AccordionItem({option, title, highlight, text}: AccordionItemProps) {
     return (
-        <Container>
-            <Option>{option}</Option>
-            <Title>{title}</Title>
-            <Highlight>{highlight}</Highlight>
-            <Text>{text.replace(/\\n/g, "\n")}</Text>
-        </Container>
+        <div className={styles.accordionItem}>
+            <small className={styles.option}>{option}</small>
+            <h1 className={styles.title}>{title}</h1>
+            <h2 className={styles.highlight}>{highlight}</h2>
+            <p className={styles.text}>{text.replace(/\\n/g, "\n")}</p>
+        </div>
     )
 }
-
-const Container = styled.div`
-    width: 100%;
-`
-
-const Option = styled.small`
-    color: var(--text-secondary);
-`
-
-const Title = styled.h1`
-    font-size: 1.5ren;
-`
-
-const Highlight = styled.h2`
-    font-size: 1.25rem;
-`
-
-const Text = styled.p`
-    color: var(--text-secondary);
-    white-space: pre-wrap;
-`
