@@ -57,14 +57,11 @@ export default function Home() {
 
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-LE1YHY7DMB"></Script>
         <Script>
-          {
-            `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-LE1YHY7DMB');
-            `
-          }
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-LE1YHY7DMB');
         </Script>
     </div>
   )
