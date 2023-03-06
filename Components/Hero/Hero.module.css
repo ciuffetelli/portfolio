@@ -24,6 +24,7 @@
 
 .link {
     color: var(--primary);
+    cursor: pointer;
 }
 
 .rightSide {
@@ -103,5 +104,14 @@
     }
     .rightSide {
         display: flex;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .title {
+        color: #2b2f32;
+    }
+    .rightSide::after {
+        background-image: radial-gradient(circle, #2b2f32, transparent 60%, #66656500);
     }
 }

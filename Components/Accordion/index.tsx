@@ -37,15 +37,22 @@ export function Accordion({ data, children }: AccordionProps) {
             </div>
             <div className={styles.wrapChildren}>
                 {(children && selected === -1) && <div className={styles.itemContent}>{children}</div>}
-                { data.map((item, key) => (
-                    (selected === key) ? 
-                        <div className={styles.itemContent}>
-                            <AccordionItem {...item.content} />
-                        </div> 
-                    : 
-                        <></>
-                ))}
+                <AccordionChild item={data.filter((item, key) => (selected === key))[0] ?? undefined} />
             </div>
+        </div>
+    )
+}
+
+type AccordionChildProps = {
+    item?: Item
+}
+function AccordionChild({ item }: AccordionChildProps) {
+    
+    if(!item?.content) return <></>
+
+    return (
+        <div className={styles.itemContent}>
+            <AccordionItem {...item.content} />
         </div>
     )
 }

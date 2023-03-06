@@ -10,8 +10,8 @@ export function AccordionItem({option, title, highlight, text}: AccordionItemPro
     return (
         <div className={styles.accordionItem}>
             <small className={styles.option}>{option}</small>
-            <h1 className={styles.title}>{title}</h1>
-            <h2 className={styles.highlight}>{highlight}</h2>
+            <h2 className={styles.title}>{title}</h2>
+            <h3 className={styles.highlight}>{highlight}</h3>
             <p className={styles.text}>{text.replace(/\\n/g, "\n")}</p>
         </div>
     )

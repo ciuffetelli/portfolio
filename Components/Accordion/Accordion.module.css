@@ -62,7 +62,7 @@
 }
 
 .title {
-    font-size: 1.5ren;
+    font-size: 2.5ren;
 }
 
 .highlight {
@@ -101,5 +101,11 @@
     .wrapChildren {
         width: 50%;
         padding: 2rem 4rem;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .title {
+        color: #ffff;
     }
 }
