@@ -1,7 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary: #1e90ff;
   --text-secondary: #6d7172;
 }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/*
 
 html,
 body {
@@ -9,7 +21,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #2b2f32;
+  background: white;    
   overflow-x: hidden;
+  transition: 0.5s ease-in-out;
 }
 
 a {
@@ -30,3 +45,14 @@ a {
     background: #2b2f32;
   }
 }
+
+[data-theme="light"] html {
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  color: #2b2f32;
+  background: white;
+}
+
+*/
