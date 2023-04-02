@@ -26,13 +26,13 @@ export function Hero(props: HeroProps) {
                 </div>
                 <TextAnimated text={header} />
 
-                <p  className="mt-4 mb-4 w-2/3">If you're curious about what I do and would like to eard more, I would be happy to share with you! Whether it's discussing my current projects, past experiences, or future goals, I am always excited to talk about my work. Don't hesitate to reach out and start the conversation!</p>
+                <p  className="mt-4 mb-4 mb:w-2/3">If you're curious about what I do and would like to know more, I'd be happy to share it with you! Talking about my current projects, past experiences, or future goals, I'm always excited to share knowledge, especially about my work. Don't hesitate to reach out and start the conversation!</p>
 
-                <Button text="Let's Talk" className='mb-4' onClick={handleLetsChat} />
+                <Button text="Let's Chat" className='mb-4' onClick={handleLetsChat} />
             </div>
             <section className="flex flex-col mt-8 justify-center">
                 <h2 className='text-lg text-slate-700 dark:text-slate-300 font-semibold border-b-2 opacity-80 mb-8'>Core skills</h2>
-                <div className="flex text-center gap-4">
+                <div className="flex text-center m-auto gap-4">
                     <div>
                         <div className='m-2' style={{color: '#3178c6'}}>
                             <SiTypescript className="text-8xl m-auto"/>
