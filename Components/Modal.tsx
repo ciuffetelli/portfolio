@@ -31,7 +31,7 @@ export function Modal(props: ModalProps) {
 
         if(modalOpen) {
 
-            modal.classList.toggle('hidden')
+            modal.classList.remove('hidden')
 
             setTimeout(() => {
                 modal.style.opacity = '1'
@@ -41,7 +41,7 @@ export function Modal(props: ModalProps) {
             modal.style.opacity = '0'
 
             setTimeout(() => {
-                modal.classList.toggle('hidden')
+                modal.classList.add('hidden')
             }, 200)
         }
     }, [modalOpen])

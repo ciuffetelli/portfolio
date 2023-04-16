@@ -43,10 +43,10 @@ export default function Table(props: TableProps) {
             if(opacity === '0') {
                 element.style.opacity = opacity
                 setTimeout(() => {
-                    element.classList.toggle('hidden')
+                    element.classList.add('hidden')
                 }, 150)
             } else {
-                element.classList.toggle('hidden')
+                element.classList.remove('hidden')
                 setTimeout(() => {
                     element.style.opacity = opacity
                 }, 10)
