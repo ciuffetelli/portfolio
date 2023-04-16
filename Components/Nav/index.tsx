@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ReactGA from 'react-ga';
 
 import { AiFillGithub, AiFillLinkedin, AiOutlineMail } from 'react-icons/ai'
@@ -7,26 +8,37 @@ import { DarkMode } from './Darkmode'
 export function Nav() {
     
     const handleGithubClick = () => {
-        ReactGA.set({ nav: 'Github' });
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'Clicked Github',
+        })
     }
 
     const handleLinkedinClick = () => {
-        ReactGA.set({ nav: 'Linkedin' });
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'Clicked Linkedin',
+        })
     }
 
     const handleEmailClick = () => {
         
-        ReactGA.set({ nav: 'Email' });
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'Clicked Email',
+        })
 
         location.href = "mailto:seufetelli@gmail.com"
     }
     return (
         <div className="flex items-center justify-between w-full">
-            <div className="hidden">
-                <strong>Daniel</strong> Ciuffetelli</div>
-            <div className="">
-                <DarkMode />
-            </div>
+            
+            <DarkMode />
+
+            <Link href='/' className="ml-8">
+                <strong>Daniel</strong> Ciuffetelli
+            </Link>
+
             <div className="flex ml-auto gap-4 w-max">
                 <a href="https://github.com/ciuffetelli" onClick={handleGithubClick} target="_new">
                     <AiFillGithub className='text-xl' />

@@ -1,24 +1,18 @@
-import { useEffect } from 'react';
-
-import ReactGA from 'react-ga';
-
-import { Nav } from '../Components/Nav'
+import Template from 'Template';
 import { Hero } from '../Components/Hero'
+import { Projects } from '../Components/Projects'
+import { GitHub } from 'Components/GitHub';
 
 export default function Home() {
-  
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, [])
   return (
-    <div>
-      <div className="container p-8 flex flex-col justify-start items-center m-auto h-screen">
-
-        <Nav />
-
+    <Template title="Front-end Engineer">
+        
         <Hero />
 
-      </div>
-    </div>
-  )
+        <Projects />
+
+        <GitHub />
+
+    </Template>
+  )  
 }

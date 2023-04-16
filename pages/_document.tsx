@@ -4,7 +4,6 @@ export default function Document() {
     return (
         <Html lang="en">
             <Head>
-                <title>Daniel Ciuffetelli - Front-end Engineer</title>
                 <meta name="description" content="Daniel Ciuffetelli's personal portfolio, front-end engineer. Page developed in Next.js" />
                 <link rel="icon" href="/img/logo.svg" />                
             </Head>

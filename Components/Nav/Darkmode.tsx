@@ -14,7 +14,10 @@ export function DarkMode() {
 
         localStorage.theme = !darkMode ? 'dark' : 'light';
 
-        ReactGA.set({ nav: `display-mode-${ (!darkMode) ? 'dark' : 'light' }`});
+        ReactGA.event({
+            category: 'Navigation',
+            action: `Clicked ${ (!darkMode) ? 'Dark' : 'Light' } Mode`,
+        })
     }
 
     useEffect(() => {

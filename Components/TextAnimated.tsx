@@ -3,6 +3,7 @@ import { useRef, useEffect } from 'react';
 type TextAnimatedProps = {
     text: string
     timing?: number
+    className?: string
 }
 export function TextAnimated(props: TextAnimatedProps) {
 
@@ -16,7 +17,7 @@ export function TextAnimated(props: TextAnimatedProps) {
     }, [])
 
     return (
-        <p ref={animateRef} className="text-left">
+        <p ref={animateRef} className={`text-left ${props.className ?? ''}`}>
             <span className="text-2xl md:text-3xl ease-in-out duration-250" data-type="paragraph">
                 { props.text.split('').map((letter, index) => (
                     <span key={index} data-type="letter" className="opacity-0 hidden ease-in duration-500">{letter}</span>
@@ -40,10 +41,10 @@ export function animateText(props: AnimateTextProps) {
     const paragraph = props.animateRef.current as HTMLElement;
     const delay = props.timing || 35;
 
-    const letter = paragraph.querySelector('.hidden[data-type="letter"]') as HTMLElement;
+    const letter = paragraph?.querySelector('.hidden[data-type="letter"]') as HTMLElement;
 
     if(!letter) {
-        const prompt = paragraph.querySelector('[data-type="prompt"]') as HTMLElement;
+        const prompt = paragraph?.querySelector('[data-type="prompt"]') as HTMLElement;
         prompt && prompt.remove();
         return;
     }   
