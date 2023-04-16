@@ -12,6 +12,7 @@ import { FcPrevious, FcNext } from 'react-icons/fc'
 
 export function Projects() {
 
+    const [isMobile, setIsMobile] = useState(false)
     const [itemActive, setItemActive] = useState(0)
 
     const modalRef = useRef<ModalElement>(null)
@@ -29,7 +30,7 @@ export function Projects() {
     const handleItemClick = (index: number) => {
         setItemActive(itemActive => index === itemActive ? 0 : index)
 
-        if(window.innerWidth < 768) {
+        if(isMobile) {
             modalRef.current?.open()
         }
     }
@@ -55,6 +56,15 @@ export function Projects() {
             return itemActive + 1
         })
     }
+
+    useEffect(() => {
+        
+        setIsMobile(window.innerWidth < 768)
+
+        window.addEventListener('resize', () => {
+            setIsMobile(window.innerWidth < 768)
+        })
+    }, [])
 
     useEffect(() => {
 
