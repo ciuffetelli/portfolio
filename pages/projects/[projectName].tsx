@@ -49,7 +49,7 @@ export default function Projects(props: ProjectsProps) {
             <div className={`relative w-64 h-64 md:w-96 md:h-96 m-auto border-2 rounded-xl ${project.background}`}>
                 <Image src={project.image} alt={project.title} fill className='rounded-xl' />
                     { project.href && (
-                        <a href={project.href} target='_blank' onClick={() => handleProjectImageClick(project.title)} className='flex absolute w-full h-full justify-center items-center bg-slate-700/75 opacity-0 hover:opacity-100 rounded-xl cursor-pointer ease-in-out duration-200'>
+                        <a href={project.href} target='_blank' rel="noreferrer" onClick={() => handleProjectImageClick(project.title)} className='flex absolute w-full h-full justify-center items-center bg-slate-700/75 opacity-0 hover:opacity-100 rounded-xl cursor-pointer ease-in-out duration-200'>
                             <FaExternalLinkAlt className='text-8xl' />
                         </a>
                     )}
