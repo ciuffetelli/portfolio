@@ -50,7 +50,7 @@ export default function Projects() {
 
                         <div className={`flex ${index % 2 === 0 ? 'flex-wrap-reverse' : 'flex-wrap'} mt-4`}>
                             { index % 2 === 0 && <ProjectDetails project={project} />}
-                            <div className={`flex flex-1 md:justify-${index % 2 === 0 ? 'start' : 'end'} pb-2 md:p-2 md:p${index % 2 === 0 ? 'l' : 'r'}-4`}>
+                            <div className={`flex w-full md:flex-1 md:justify-${index % 2 === 0 ? 'start' : 'end'} pb-2 md:p-2 md:p${index % 2 === 0 ? 'l' : 'r'}-4`}>
                                 <div className={`relative w-64 h-64 md:w-96 md:h-96 m-auto border-2 rounded-xl ${project.background}`}>
                                     <Image src={project.image} alt={project.title} fill className='rounded-xl' />
                                     { project.href && (

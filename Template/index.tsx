@@ -36,7 +36,7 @@ export default function Template(props: TemplateProps) {
                     {props.back && (
                         <Link href={props.back.href} className='flex items-center'><IoIosArrowBack /> {props.back.title}</Link>
                     )}
-                    <div className="w-full md:w-max bg-sky-600 text-white break-words font-semibold p-1 text-center">
+                    <div className="bg-sky-600 text-white break-words font-semibold p-1 text-center">
                         {props.title}
                     </div>
                 </div>

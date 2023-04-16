@@ -57,7 +57,7 @@ export default function Projects(props: ProjectsProps) {
 
             <p className='max-w-lg text-l md:text-xl text-center p-4 opacity-70'>{ project.description }</p>
 
-            <div className='max-w-md'>
+            <div className='w-full md:max-w-md'>
                 <Table title="Technical Data Sheet" data={tableData} orientation='vertical' />
             </div>
 

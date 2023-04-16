@@ -23,7 +23,7 @@ export function ProjectDetails(props: ProjectDetailsProps) {
     props.project.repository && (tableData['GitHub'] = () => <ProjectsLink href={props.project.repository ?? ''} project={props.project.title} type="github" />)
 
     return (
-        <div className='flex flex-1 flex-col text-center justify-evenly gap-4'>
+        <div className='flex sm:w-full md:flex-1 flex-col text-center justify-evenly gap-4'>
             <p className='text-l md:text-xl p-4 opacity-70'>{ props.project.description }</p>
             <Table title="Technical Data Sheet" data={tableData} orientation='vertical' accordion={true} className='md:mt-0' />
         </div>
