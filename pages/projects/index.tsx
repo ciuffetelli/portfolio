@@ -48,7 +48,7 @@ export default function Projects() {
                             <SectionTitle title={project.title} />
                         </div>
 
-                        <div className={`flex flex-wrap${index % 2 === 0 ? '-reverse' : ''} mt-4`}>
+                        <div className={`flex ${index % 2 === 0 ? 'flex-wrap-reverse' : 'flex-wrap'} mt-4`}>
                             { index % 2 === 0 && <ProjectDetails project={project} />}
                             <div className={`flex flex-1 md:justify-${index % 2 === 0 ? 'start' : 'end'} pb-2 md:p-2 md:p${index % 2 === 0 ? 'l' : 'r'}-4`}>
                                 <div className={`relative w-64 h-64 md:w-96 md:h-96 m-auto border-2 rounded-xl ${project.background}`}>

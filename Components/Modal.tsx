@@ -27,24 +27,21 @@ export function Modal(props: ModalProps) {
 
     useEffect(() => {
 
-        const toggle = () => {
-            modalRef.current?.classList.toggle('opacity-0')
-            modalRef.current?.classList.toggle('opacity-1')
-        }
+        const modal = modalRef.current as HTMLDivElement
 
         if(modalOpen) {
 
-            modalRef.current?.classList.toggle('hidden')
+            modal.classList.toggle('hidden')
 
             setTimeout(() => {
-                toggle()
+                modal.style.opacity = '1'
             }, 50)
         } else {
             
-            toggle()
+            modal.style.opacity = '0'
 
             setTimeout(() => {
-                modalRef.current?.classList.toggle('hidden')
+                modal.classList.toggle('hidden')
             }, 200)
         }
     }, [modalOpen])
